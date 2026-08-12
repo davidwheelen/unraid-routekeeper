@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plugin>
+  <Name>RouteKeeper</Name>
+  <Overview>Persist only the IPv4 and IPv6 routes you explicitly select and restore enabled routes after Unraid starts.</Overview>
+  <PluginURL>https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg</PluginURL>
+  <PluginAuthor>davidwheelen</PluginAuthor>
+  <Support>https://github.com/davidwheelen/unraid-routekeeper/issues</Support>
+  <Project>https://github.com/davidwheelen/unraid-routekeeper</Project>
+  <ReadMe>https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/README.md</ReadMe>
+  <Category>Tools:System</Category>
+  <MinVer>7.2.0</MinVer>
+  <Icon>https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/assets/routekeeper.svg</Icon>
+  <IconFA>random</IconFA>
+  <License>MIT</License>
+</Plugin>

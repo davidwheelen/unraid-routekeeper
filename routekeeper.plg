@@ -1,0 +1,59 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name "routekeeper">
+<!ENTITY author "davidwheelen">
+<!ENTITY version "2026.08.11">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
+<!ENTITY packageName "routekeeper-2026.08.11-noarch-1.txz">
+<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.11-noarch-1.txz">
+<!ENTITY packageSHA256 "8d41a9a8ba219c9dcc4eb3daad4794d1f4216ad9d43338251c61de38cfa4c39c">
+]>
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="random">
+<CHANGES>
+<![CDATA[
+### 2026.08.11
+- Initial test-ready RouteKeeper release.
+- Explicitly save and manage selected IPv4 and IPv6 routes.
+- Restore enabled routes after startup with bounded network-readiness retries.
+- Preserve saved definitions when a live route is temporarily removed.
+]]>
+</CHANGES>
+
+<FILE Name="/boot/config/plugins/&name;/&packageName;">
+<URL>&packageURL;</URL>
+<SHA256>&packageSHA256;</SHA256>
+</FILE>
+
+<FILE Run="/bin/bash">
+<INLINE>
+<![CDATA[
+set -e
+upgradepkg --install-new /boot/config/plugins/routekeeper/]]>&packageName;<![CDATA[
+find /boot/config/plugins/routekeeper -maxdepth 1 -type f -name 'routekeeper-*-noarch-1.txz' ! -name ']]>&packageName;<![CDATA[' -delete
+echo "RouteKeeper ]]>&version;<![CDATA[ installed. Open Settings -> RouteKeeper."
+]]>
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+<![CDATA[
+if [ -r /run/routekeeper/startup.pid ]; then
+  RK_PID="$(cat /run/routekeeper/startup.pid 2>/dev/null)"
+  case "$RK_PID" in
+    (*[!0-9]*|'') ;;
+    (*)
+      if tr '\000' ' ' < "/proc/${RK_PID}/cmdline" 2>/dev/null | grep -Fq '/usr/local/emhttp/plugins/routekeeper/scripts/restore-startup.php'; then
+        kill "$RK_PID" 2>/dev/null || true
+      fi
+      ;;
+  esac
+fi
+removepkg routekeeper 2>/dev/null || true
+rm -rf /usr/local/emhttp/plugins/routekeeper /run/routekeeper
+rm -f /boot/config/plugins/routekeeper/routekeeper-*-noarch-1.txz
+echo "RouteKeeper removed. Saved configuration was preserved in /boot/config/plugins/routekeeper/."
+]]>
+</INLINE>
+</FILE>
+</PLUGIN>
