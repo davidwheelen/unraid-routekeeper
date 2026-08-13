@@ -2,15 +2,18 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name "routekeeper">
 <!ENTITY author "davidwheelen">
-<!ENTITY version "2026.08.22">
+<!ENTITY version "2026.08.23">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
-<!ENTITY packageName "routekeeper-2026.08.22-noarch-1.txz">
-<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.22-noarch-1.txz">
-<!ENTITY packageSHA256 "e66da60323a6b85fd65f6b26bbb3dea50e9db694de4abfec6e5beaad8b77b0d0">
+<!ENTITY packageName "routekeeper-2026.08.23-noarch-1.txz">
+<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.23-noarch-1.txz">
+<!ENTITY packageSHA256 "15f4dfcb58fa0857adc89373b2d7d791141c6546d3da3f9cdd791e170e1aae0f">
 ]>
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="routekeeper-unraid.png">
 <CHANGES>
 <![CDATA[
+### 2026.08.23
+- Added the installed-plugin description README used by Unraid's Installed Plugins page.
+
 ### 2026.08.22
 - Rebuilt the Unraid WebGUI icon from the original RouteKeeper SVG artwork instead of a redrawn icon.
 - Converted the icon to a transparent-background solid white shield with the route arrows cut out, including softer lower shield corners.
