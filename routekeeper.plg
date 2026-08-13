@@ -2,15 +2,21 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name "routekeeper">
 <!ENTITY author "davidwheelen">
-<!ENTITY version "2026.08.14">
+<!ENTITY version "2026.08.15">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
-<!ENTITY packageName "routekeeper-2026.08.14-noarch-1.txz">
-<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.14-noarch-1.txz">
-<!ENTITY packageSHA256 "1a98c3115cfe1ea5cb95b1283742acaff1e3239366bcc90ca694cec4e0a0a488">
+<!ENTITY packageName "routekeeper-2026.08.15-noarch-1.txz">
+<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.15-noarch-1.txz">
+<!ENTITY packageSHA256 "a4658c99f14594c9b45647a7282555e063ca2c51c963da106cfdea1d183a017e">
 ]>
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="sitemap">
 <CHANGES>
 <![CDATA[
+### 2026.08.15
+- Reduced the main RouteKeeper page to match Unraid's routing-table layout.
+- Moved the save checkbox to the right-side action column.
+- Removed inline warning/status detail from live route rows; risky selections now warn during Save Selected.
+- Removed the saved-route management table from the main testing layout.
+
 ### 2026.08.14
 - Moved RouteKeeper into the Network Services Settings tile group instead of rendering inline on the Settings overview.
 - Added a RouteKeeper Settings tile icon class backed by the packaged RouteKeeper artwork.

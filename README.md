@@ -23,26 +23,25 @@ Settings -> RouteKeeper
 ## What RouteKeeper Does
 
 - Shows live IPv4 and IPv6 routes from Unraid's routing table.
-- Lets you explicitly save selected routes for persistence.
+- Lets you explicitly save selected routes for persistence using right-side checkboxes.
 - Restores enabled saved routes after Unraid starts.
 - Lets you temporarily remove a live route without deleting its saved definition.
 - Provides a master switch for automatic restoration.
-- Shows apply status and routine errors in the WebGUI.
 
 RouteKeeper does not replace Unraid Network Settings, does not edit `network.cfg`, and does not blindly persist the whole routing table.
 
 ## Supported Version
 
 - Minimum Unraid version: 7.2.0
-- RouteKeeper version: 2026.08.14
+- RouteKeeper version: 2026.08.15
 
 ## Files In This Repository
 
 This repository hosts the public installer files required for Unraid installation:
 
 - `routekeeper.plg`
-- `routekeeper-2026.08.14-noarch-1.txz`
-- `routekeeper-2026.08.14-noarch-1.txz.sha256`
+- `routekeeper-2026.08.15-noarch-1.txz`
+- `routekeeper-2026.08.15-noarch-1.txz.sha256`
 - `plugins/routekeeper.xml`
 - `assets/routekeeper.svg`
 
