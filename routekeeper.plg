@@ -2,15 +2,19 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name "routekeeper">
 <!ENTITY author "davidwheelen">
-<!ENTITY version "2026.08.15">
+<!ENTITY version "2026.08.16">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
-<!ENTITY packageName "routekeeper-2026.08.15-noarch-1.txz">
-<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.15-noarch-1.txz">
-<!ENTITY packageSHA256 "a4658c99f14594c9b45647a7282555e063ca2c51c963da106cfdea1d183a017e">
+<!ENTITY packageName "routekeeper-2026.08.16-noarch-1.txz">
+<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.16-noarch-1.txz">
+<!ENTITY packageSHA256 "ce8882f7c3f7f34530f52a67dc3f5bdf0166ca144059efc3e0e2c00a656cc3ed">
 ]>
-<PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="sitemap">
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="routekeeper">
 <CHANGES>
 <![CDATA[
+### 2026.08.16
+- Fixed RouteKeeper icon wiring for Unraid Settings and Installed Plugins by using the expected FontAwesome-style routekeeper icon name.
+- Bound the routekeeper icon class to the packaged original shield/arrows SVG artwork.
+
 ### 2026.08.15
 - Reduced the main RouteKeeper page to match Unraid's routing-table layout.
 - Moved the save checkbox to the right-side action column.
