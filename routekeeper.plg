@@ -2,15 +2,20 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name "routekeeper">
 <!ENTITY author "davidwheelen">
-<!ENTITY version "2026.08.11">
+<!ENTITY version "2026.08.13">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
-<!ENTITY packageName "routekeeper-2026.08.11-noarch-1.txz">
-<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.11-noarch-1.txz">
+<!ENTITY packageName "routekeeper-2026.08.13-noarch-1.txz">
+<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.13-noarch-1.txz">
 <!ENTITY packageSHA256 "d4f5c5c98d4af123bb983c39c754e43966a5b3d94c011f91db8d1271b962a3a7">
 ]>
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="/plugins/routekeeper/images/routekeeper.svg">
 <CHANGES>
 <![CDATA[
+### 2026.08.13
+- Simplified the RouteKeeper Settings page to use a route-table style live route list.
+- Added checkbox selection and a single Save Selected action for saving live routes.
+- Packaged the RouteKeeper SVG icon for the Settings page and installed plugin metadata.
+
 ### 2026.08.11
 - Initial test-ready RouteKeeper release.
 - Explicitly save and manage selected IPv4 and IPv6 routes.
