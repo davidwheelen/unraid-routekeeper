@@ -10,6 +10,6 @@
   <Category>Tools:System</Category>
   <MinVer>7.2.0</MinVer>
   <Icon>https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/assets/routekeeper.svg</Icon>
-  <IconFA>route</IconFA>
+  <IconFA>sitemap</IconFA>
   <License>MIT</License>
 </Plugin>
