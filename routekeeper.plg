@@ -2,15 +2,19 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name "routekeeper">
 <!ENTITY author "davidwheelen">
-<!ENTITY version "2026.08.17">
+<!ENTITY version "2026.08.18">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
-<!ENTITY packageName "routekeeper-2026.08.17-noarch-1.txz">
-<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.17-noarch-1.txz">
+<!ENTITY packageName "routekeeper-2026.08.18-noarch-1.txz">
+<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.18-noarch-1.txz">
 <!ENTITY packageSHA256 "0773ca0ada1766773a5a2dbc58c24e9f18ce7b5054f337da04baa2575bd1f3d8">
 ]>
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="routekeeper">
 <CHANGES>
 <![CDATA[
+### 2026.08.18
+- Moved RouteKeeper persistent-config initialization and startup restore launch into the plugin installer script that Unraid runs at boot.
+- Keeps event hooks as additional restore triggers while ensuring boot-time plugin installation launches restoration directly.
+
 ### 2026.08.17
 - Added an early driver_loaded restore hook so saved routes can be restored after reboot even when the array remains stopped.
 
@@ -52,6 +56,33 @@
 <![CDATA[
 set -e
 upgradepkg --install-new /boot/config/plugins/routekeeper/]]>&packageName;<![CDATA[
+
+CONFIG_DIR="/boot/config/plugins/routekeeper"
+RUNTIME_DIR="/run/routekeeper"
+PLUGIN_ROOT="/usr/local/emhttp/plugins/routekeeper"
+
+mkdir -p "${CONFIG_DIR}" "${RUNTIME_DIR}"
+chmod 0750 "${CONFIG_DIR}" "${RUNTIME_DIR}"
+
+if [[ ! -f "${CONFIG_DIR}/routekeeper.cfg" ]]; then
+  printf 'AUTO_RESTORE="yes"\nCONFIG_SCHEMA="1"\n' > "${CONFIG_DIR}/routekeeper.cfg"
+  chmod 0640 "${CONFIG_DIR}/routekeeper.cfg"
+fi
+
+if [[ ! -f "${CONFIG_DIR}/routes.json" ]]; then
+  printf '{\n  "schema": 1,\n  "routes": []\n}\n' > "${CONFIG_DIR}/routes.json"
+  chmod 0640 "${CONFIG_DIR}/routes.json"
+fi
+
+if [[ ! -f "${CONFIG_DIR}/status.json" ]]; then
+  printf '{\n  "schema": 1,\n  "routes": {}\n}\n' > "${CONFIG_DIR}/status.json"
+  chmod 0640 "${CONFIG_DIR}/status.json"
+fi
+
+if [[ -x "${PLUGIN_ROOT}/scripts/restore-startup.php" ]]; then
+  nohup "${PLUGIN_ROOT}/scripts/restore-startup.php" --install >/dev/null 2>&1 &
+fi
+
 find /boot/config/plugins/routekeeper -maxdepth 1 -type f -name 'routekeeper-*-noarch-1.txz' ! -name ']]>&packageName;<![CDATA[' -delete
 echo "RouteKeeper ]]>&version;<![CDATA[ installed. Open Settings -> RouteKeeper."
 ]]>
