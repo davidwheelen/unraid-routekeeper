@@ -42,8 +42,11 @@ This repository hosts the public installer files required for Unraid installatio
 - `routekeeper.plg`
 - `routekeeper-2026.08.23-noarch-1.txz`
 - `routekeeper-2026.08.23-noarch-1.txz.sha256`
+- `ca_profile.xml`
 - `plugins/routekeeper.xml`
 - `assets/routekeeper.svg`
+- `assets/routekeeper-unraid.svg`
+- `assets/routekeeper-unraid.png`
 
 The development source tree is not published in this repository.
 

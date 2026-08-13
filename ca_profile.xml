@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommunityApplications>
+  <Profile>RouteKeeper is maintained by davidwheelen. It is a native Unraid system plugin for explicitly saving, inspecting, applying, temporarily removing, and restoring selected IPv4 and IPv6 routes.</Profile>
+  <Icon>https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/assets/routekeeper.svg</Icon>
+  <WebPage>https://github.com/davidwheelen/unraid-routekeeper</WebPage>
+</CommunityApplications>

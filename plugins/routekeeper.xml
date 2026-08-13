@@ -3,7 +3,6 @@
   <Name>RouteKeeper</Name>
   <Overview>Persist only the IPv4 and IPv6 routes you explicitly select and restore enabled routes after Unraid starts.</Overview>
   <PluginURL>https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg</PluginURL>
-  <PluginAuthor>davidwheelen</PluginAuthor>
   <Support>https://github.com/davidwheelen/unraid-routekeeper/issues</Support>
   <Project>https://github.com/davidwheelen/unraid-routekeeper</Project>
   <ReadMe>https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/README.md</ReadMe>
