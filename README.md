@@ -33,15 +33,15 @@ RouteKeeper does not replace Unraid Network Settings, does not edit `network.cfg
 ## Supported Version
 
 - Minimum Unraid version: 7.2.0
-- RouteKeeper version: 2026.08.18
+- RouteKeeper version: 2026.08.19
 
 ## Files In This Repository
 
 This repository hosts the public installer files required for Unraid installation:
 
 - `routekeeper.plg`
-- `routekeeper-2026.08.18-noarch-1.txz`
-- `routekeeper-2026.08.18-noarch-1.txz.sha256`
+- `routekeeper-2026.08.19-noarch-1.txz`
+- `routekeeper-2026.08.19-noarch-1.txz.sha256`
 - `plugins/routekeeper.xml`
 - `assets/routekeeper.svg`
 
