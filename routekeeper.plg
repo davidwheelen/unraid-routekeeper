@@ -6,9 +6,9 @@
 <!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
 <!ENTITY packageName "routekeeper-2026.08.11-noarch-1.txz">
 <!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.11-noarch-1.txz">
-<!ENTITY packageSHA256 "8d41a9a8ba219c9dcc4eb3daad4794d1f4216ad9d43338251c61de38cfa4c39c">
+<!ENTITY packageSHA256 "d4f5c5c98d4af123bb983c39c754e43966a5b3d94c011f91db8d1271b962a3a7">
 ]>
-<PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="random">
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="/plugins/routekeeper/images/routekeeper.svg">
 <CHANGES>
 <![CDATA[
 ### 2026.08.11
