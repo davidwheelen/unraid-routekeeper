@@ -2,15 +2,19 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name "routekeeper">
 <!ENTITY author "davidwheelen">
-<!ENTITY version "2026.08.21">
+<!ENTITY version "2026.08.22">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper.plg">
-<!ENTITY packageName "routekeeper-2026.08.21-noarch-1.txz">
-<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.21-noarch-1.txz">
-<!ENTITY packageSHA256 "2ce9e91453ffa9ac8868f15597bd47a5f2ea40b9a27a605c99fa62552ee62a32">
+<!ENTITY packageName "routekeeper-2026.08.22-noarch-1.txz">
+<!ENTITY packageURL "https://raw.githubusercontent.com/davidwheelen/unraid-routekeeper/main/routekeeper-2026.08.22-noarch-1.txz">
+<!ENTITY packageSHA256 "e66da60323a6b85fd65f6b26bbb3dea50e9db694de4abfec6e5beaad8b77b0d0">
 ]>
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="Settings/RouteKeeper" pluginURL="&pluginURL;" min="7.2.0" support="https://github.com/davidwheelen/unraid-routekeeper/issues" project="https://github.com/davidwheelen/unraid-routekeeper" icon="routekeeper-unraid.png">
 <CHANGES>
 <![CDATA[
+### 2026.08.22
+- Rebuilt the Unraid WebGUI icon from the original RouteKeeper SVG artwork instead of a redrawn icon.
+- Converted the icon to a transparent-background solid white shield with the route arrows cut out, including softer lower shield corners.
+
 ### 2026.08.21
 - Refined the Unraid WebGUI icon to a plain white transparent-background shield/route glyph with the shield shape filling the icon area.
 

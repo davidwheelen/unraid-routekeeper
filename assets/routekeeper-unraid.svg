@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 16 432 480" role="img" aria-labelledby="title desc">
+  <title id="title">RouteKeeper</title>
+  <desc id="desc">A solid white shield with routed arrows cut out</desc>
+  <defs>
+    <mask id="routekeeper-cutout">
+      <rect x="40" y="16" width="432" height="480" fill="#fff"/>
+      <path
+        fill="#000"
+        d="M155 151h111v-42l88 72-88 72v-42H155a27 27 0 0 1 0-60zm202 150H246v-42l-88 72 88 72v-42h111a27 27 0 1 0 0-60z"/>
+    </mask>
+  </defs>
+  <path
+    fill="#fff"
+    mask="url(#routekeeper-cutout)"
+    d="M256 24 456 96v136c0 46-21 101-58 158-20 31-68 69-142 98-74-29-122-67-142-98-37-57-58-112-58-158V96z"/>
+</svg>
